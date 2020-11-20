@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>dbtree</groupId>
+  <artifactId>dbtree</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <profiles>
+
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<db.jdbcurl>jdbc:db2://localhost:50000/dev01:retrieveMessagesFromServerOnGetMessage=true;currentSchema=DSUGALL;</db.jdbcurl>
+				<db.user>db2admin</db.user>
+				<db.password>dataiscool</db.password>
+				<db.driver>com.ibm.db2.jcc.DB2Driver</db.driver>
+				<itsb.log-config-includes>default-logback.xml</itsb.log-config-includes>
+			</properties>
+		</profile>
+	</profiles>
+	
+	<dependencies>
+	<!-- https://mvnrepository.com/artifact/commons-dbutils/commons-dbutils -->
+	<dependency>
+	    <groupId>commons-dbutils</groupId>
+	    <artifactId>commons-dbutils</artifactId>
+	    <version>1.7</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.ibm.db2.jcc/db2jcc -->
+	<dependency>
+	    <groupId>com.ibm.db2.jcc</groupId>
+	    <artifactId>db2jcc</artifactId>
+	    <version>db2jcc4</version>
+	</dependency>
+	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
