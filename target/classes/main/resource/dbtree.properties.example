@@ -1,0 +1,6 @@
+DatabaseName=mydatabase
+Description=local db2 database example
+User=db2inst1
+Password=***********
+ServerName=localhost
+PortNumber=50000

@@ -10,7 +10,7 @@ import java.util.List;
  *
  */
 public class ConstraintTreeBuilder {
-	private static final int LEVEL_MAX = 20;
+	private static final int LEVEL_MAX = 20; //catch dependency loops
 
 	private ForeignKeyDBQueryRun queryRunner;
 	
@@ -20,7 +20,7 @@ public class ConstraintTreeBuilder {
 	
 	public void addChildren(TreeNode<ConstraintData> node, int level) {
 		if (LEVEL_MAX <= level) {
-			System.err.println("exceeded max level");
+			System.err.println("exceeded max level at " + node.getNode());
 			return;
 		}
 		ConstraintData data = node.getNode();

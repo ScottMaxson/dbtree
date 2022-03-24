@@ -107,6 +107,12 @@ public class ConstraintData {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "ConstraintData [schemaName=" + schemaName + ", tableName=" + tableName + ", constraintName="
+				+ constraintName + ", refersToTableName=" + refersToTableName + "]";
+	}
 	
 	
 
