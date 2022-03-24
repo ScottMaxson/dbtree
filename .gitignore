@@ -28,3 +28,4 @@ hs_err_pid*
 
 # exclude any local settings for db connection
 src/main/resource/dbtree.properties
+target/**
