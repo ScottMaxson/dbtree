@@ -27,5 +27,5 @@ hs_err_pid*
 .classpath
 
 # exclude any local settings for db connection
-src/main/resource/dbtree.properties
-target/**
+/src/main/resource/dbtree.properties
+/target/
